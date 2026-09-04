@@ -1,0 +1,804 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* ============================================================
+   PAGE
+============================================================ */
+
+.page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  margin: 0 0 6px;
+  font-size: 32px;
+}
+
+.header p {
+  margin: 0;
+  color: #687386;
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  background: #172033;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.refreshButton {
+  padding: 11px 18px;
+}
+
+.clearButton {
+  background: #e7ebf2;
+  color: #172033;
+}
+
+.closeButton {
+  background: #e7ebf2;
+  color: #172033;
+}
+
+/* ============================================================
+   ERROR
+============================================================ */
+
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   STATS
+============================================================ */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(7, minmax(130px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background: white;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.statCard span {
+  display: block;
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.statCard strong {
+  font-size: 26px;
+}
+
+/* ============================================================
+   SEARCH
+============================================================ */
+
+.searchSection {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.searchSection input {
+  flex: 1;
+  padding: 13px 15px;
+  border-radius: 8px;
+  border: 1px solid #d8dee8;
+  background: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.searchSection input:focus {
+  border-color: #172033;
+}
+
+/* ============================================================
+   CARD
+============================================================ */
+
+.card,
+.traceSection {
+  background: white;
+  border: 1px solid #e5e9f0;
+  border-radius: 14px;
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.04);
+  margin-bottom: 24px;
+}
+
+.cardHeader {
+  padding: 20px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.cardHeader h2 {
+  margin: 0 0 5px;
+  font-size: 20px;
+}
+
+.cardHeader p {
+  margin: 0;
+  color: #7a8494;
+  font-size: 13px;
+}
+
+.count {
+  background: #eef2f7;
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* ============================================================
+   TABLE
+============================================================ */
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 14px 18px;
+  background: #f8fafc;
+  color: #657084;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+td {
+  padding: 15px 18px;
+  border-top: 1px solid #edf0f5;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background: #f8fafc;
+}
+
+code {
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+  font-size: 12px;
+}
+
+/* ============================================================
+   BADGES
+============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.badge.positive {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.negative {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge.neutral {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.badge.high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.valid {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ============================================================
+   SUBTOPICS
+============================================================ */
+
+.subtopics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.subtopic {
+  display: inline-block;
+  background: #eef2f7;
+  color: #4b5563;
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 11px;
+}
+
+/* ============================================================
+   LOADING / EMPTY
+============================================================ */
+
+.loading,
+.empty {
+  padding: 40px;
+  text-align: center;
+  color: #7a8494;
+}
+
+/* ============================================================
+   TRACE
+============================================================ */
+
+.traceSection {
+  padding-bottom: 25px;
+}
+
+.traceSection > .cardHeader {
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   RESULT
+============================================================ */
+
+.resultCard {
+  margin: 0 22px 20px;
+  padding: 20px;
+  background: #f8fafc;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+}
+
+.resultCard h3 {
+  margin-top: 0;
+}
+
+.resultGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(5, 1fr);
+  gap: 18px;
+}
+
+.resultGrid label,
+.subtopicResult label {
+  display: block;
+  font-size: 11px;
+  color: #7a8494;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.subtopicResult {
+  margin-top: 20px;
+}
+
+/* ============================================================
+   SUMMARY
+============================================================ */
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(7, 1fr);
+  gap: 12px;
+  margin: 0 22px 22px;
+}
+
+.summaryCard {
+  background: white;
+  border: 1px solid #e5e9f0;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.summaryCard span {
+  display: block;
+  color: #7a8494;
+  font-size: 11px;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.summaryCard strong {
+  font-size: 18px;
+}
+
+/* ============================================================
+   STEPS
+============================================================ */
+
+.stepsCard {
+  margin: 0 22px;
+}
+
+.stepsCard h3 {
+  margin-bottom: 15px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step {
+  border: 1px solid #e5e9f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stepHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 15px;
+  background: #f8fafc;
+}
+
+.stepHeader > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.stepNumber {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #172033;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.stepType {
+  font-size: 10px;
+  background: #e5e7eb;
+  padding: 4px 7px;
+  border-radius: 5px;
+  color: #596273;
+}
+
+.stepRight {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  color: #687386;
+}
+
+.status {
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 10px;
+}
+
+.errorStatus {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ============================================================
+   GENERATION INFO
+============================================================ */
+
+.generationInfo {
+  display: grid;
+  grid-template-columns:
+    2fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 14px 15px;
+  border-top: 1px solid #edf0f5;
+}
+
+.generationInfo label {
+  display: block;
+  font-size: 10px;
+  color: #8a93a2;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.generationInfo span {
+  font-size: 12px;
+}
+
+/* ============================================================
+   STEP OUTPUT
+============================================================ */
+
+.stepOutput {
+  padding: 14px 15px;
+  border-top: 1px solid #edf0f5;
+}
+
+.stepOutput label {
+  display: block;
+  font-size: 10px;
+  color: #8a93a2;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.stepOutput pre {
+  margin: 0;
+  padding: 12px;
+  border-radius: 7px;
+  background: #f5f7fa;
+  overflow-x: auto;
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+  font-size: 11px;
+  line-height: 1.5;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* ============================================================
+   STEP ERROR
+============================================================ */
+
+.stepError {
+  padding: 12px 15px;
+  border-top: 1px solid #fecaca;
+  background: #fff1f2;
+  color: #991b1b;
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1200px) {
+
+  .statsGrid {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+
+  .summaryGrid {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+
+  .resultGrid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .page {
+    padding: 18px;
+  }
+
+  .header {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .statsGrid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .summaryGrid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .resultGrid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .generationInfo {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .header {
+    flex-direction: column;
+  }
+
+  .searchSection {
+    flex-direction: column;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .resultGrid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ============================================================
+   TRACE CHATBOT
+============================================================ */
+
+.chatCard {
+  margin: 0 22px 22px;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+  background: white;
+  overflow: hidden;
+}
+
+.chatHeader {
+  padding: 18px 20px;
+  border-bottom: 1px solid #edf0f5;
+  background: #f8fafc;
+}
+
+.chatHeader h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+}
+
+.chatHeader p {
+  margin: 0;
+  color: #7a8494;
+  font-size: 12px;
+}
+
+.chatMessages {
+  min-height: 180px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #fbfcfe;
+}
+
+.chatEmpty {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  color: #7a8494;
+  font-size: 13px;
+}
+
+.chatEmpty strong {
+  color: #172033;
+  font-size: 15px;
+}
+
+.chatSuggestions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.chatSuggestions button {
+  background: white;
+  color: #172033;
+  border: 1px solid #d8dee8;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.chatSuggestions button:hover {
+  background: #f1f4f8;
+  opacity: 1;
+}
+
+.chatMessage {
+  display: flex;
+  flex-direction: column;
+  max-width: 82%;
+  gap: 5px;
+}
+
+.userMessage {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.assistantMessage {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.chatRole {
+  font-size: 10px;
+  color: #8a93a2;
+  font-weight: 700;
+}
+
+.chatBubble {
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.userMessage .chatBubble {
+  background: #172033;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.assistantMessage .chatBubble {
+  background: white;
+  color: #263044;
+  border: 1px solid #e5e9f0;
+  border-bottom-left-radius: 4px;
+}
+
+.chatTyping {
+  color: #7a8494;
+}
+
+.chatInputRow {
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  border-top: 1px solid #edf0f5;
+  background: white;
+}
+
+.chatInputRow input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+  outline: none;
+  font-size: 13px;
+}
+
+.chatInputRow input:focus {
+  border-color: #172033;
+}
+
+.chatInputRow input:disabled {
+  background: #f5f7fb;
+}
+
+.chatInputRow button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 800px) {
+  .chatMessage {
+    max-width: 94%;
+  }
+
+  .chatSuggestions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .chatSuggestions button {
+    width: 100%;
+  }
+}
+
