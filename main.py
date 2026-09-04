@@ -94,6 +94,7 @@ app.add_middleware(
         "http://127.0.0.1:3000",
         "http://localhost:3001",
         "http://127.0.0.1:3001",
+        "https://frontend-k632pz4hi-rgdharani44-2692.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
